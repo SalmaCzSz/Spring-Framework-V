@@ -9,6 +9,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import com.devs4j.di.atributo.*;
 import com.devs4j.di.profiles.*;
 import com.devs4j.di.qualifiers.*;
+import com.devs4j.di.scopes.EjemploScope;
 
 @SpringBootApplication
 public class DependencyInyectionApplication {
@@ -50,8 +51,16 @@ public class DependencyInyectionApplication {
 		
 		
 		
-		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+		/*ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
 		EnvironmentService environmentService =  context.getBean(EnvironmentService.class);
-		log.info("Active environment {}", environmentService.getEnvironment());
+		log.info("Active environment {}", environmentService.getEnvironment()); */
+		
+		
+		
+		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+		EjemploScope ejemploScopeI = context.getBean(EjemploScope.class);
+		EjemploScope ejemploScopeII = context.getBean(EjemploScope.class);
+		log.info("Are beans equal {}", ejemploScopeI.equals(ejemploScopeII));
+		log.info("Are beans == {}", ejemploScopeI == ejemploScopeII);
 	}
 }
