@@ -16,10 +16,10 @@ import com.devs4j.di.profiles.*;
 import com.devs4j.di.qualifiers.*;
 import com.devs4j.di.scopes.EjemploScope;
 
-// @SpringBootApplication
-@Configuration
+@SpringBootApplication
+/*@Configuration
 @ComponentScan
-@EnableAutoConfiguration
+@EnableAutoConfiguration*/
 public class DependencyInyectionApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(DependencyInyectionApplication.class);
