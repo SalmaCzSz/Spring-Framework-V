@@ -3,9 +3,12 @@ package com.devs4j.di;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.devs4j.di.atributo.*;
 import com.devs4j.di.autowire.AreaCalculatorService;
@@ -13,7 +16,10 @@ import com.devs4j.di.profiles.*;
 import com.devs4j.di.qualifiers.*;
 import com.devs4j.di.scopes.EjemploScope;
 
-@SpringBootApplication
+// @SpringBootApplication
+@Configuration
+@ComponentScan
+@EnableAutoConfiguration
 public class DependencyInyectionApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(DependencyInyectionApplication.class);
