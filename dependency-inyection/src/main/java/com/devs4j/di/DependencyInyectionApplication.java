@@ -8,6 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import com.devs4j.di.atributo.*;
+import com.devs4j.di.autowire.AreaCalculatorService;
 import com.devs4j.di.profiles.*;
 import com.devs4j.di.qualifiers.*;
 import com.devs4j.di.scopes.EjemploScope;
@@ -71,8 +72,14 @@ public class DependencyInyectionApplication {
 		
 		
 		
-		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+		/*ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
 		String nombreApp = context.getBean(String.class);
-		log.info("Nombre aplicación {}", nombreApp);
+		log.info("Nombre aplicación {}", nombreApp);*/
+		
+		
+		
+		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+		AreaCalculatorService areaCalculator = context.getBean(AreaCalculatorService.class);
+		log.info("Área total {}", areaCalculator.calcAreas());
 	}
 }
