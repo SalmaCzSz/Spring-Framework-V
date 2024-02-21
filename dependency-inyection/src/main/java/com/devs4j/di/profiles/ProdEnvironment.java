@@ -1,15 +1,14 @@
-package com.dev4j.di.profiles;
+package com.devs4j.di.profiles;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("dev")
-public class DevEnvironment implements EnvironmentService{
+@Profile("prod")
+public class ProdEnvironment implements EnvironmentService{
 
 	@Override
 	public String getEnvironment() {
-		return "Dev";
+		return "Prod";
 	}
-
 }

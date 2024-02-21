@@ -1,15 +1,14 @@
-package com.dev4j.di.profiles;
+package com.devs4j.di.profiles;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Service
-@Profile("qa")
-public class QaEnvironment implements EnvironmentService{
+@Profile(value = {"dev", "default"})
+public class DevEnvironment implements EnvironmentService{
 
 	@Override
 	public String getEnvironment() {
-		return "QA";
+		return "Dev";
 	}
-
 }
