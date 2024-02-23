@@ -15,6 +15,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import com.devs4j.di.atributo.*;
 import com.devs4j.di.autowire.AreaCalculatorService;
+import com.devs4j.di.lifecycle.LifeCycleBean;
 import com.devs4j.di.profiles.*;
 import com.devs4j.di.qualifiers.*;
 import com.devs4j.di.scopes.EjemploScope;
@@ -93,8 +94,13 @@ public class DependencyInyectionApplication {
 		
 		
 		
-		ExpressionParser parser = new SpelExpressionParser();
+		/*ExpressionParser parser = new SpelExpressionParser();
 		Expression expression = parser.parseExpression("10 + 20");
-		log.info("Result {}", expression.getValue());
+		log.info("Result {}", expression.getValue());*/
+		
+		
+		
+		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+		LifeCycleBean bean = context.getBean(LifeCycleBean.class);
 	}
 }
