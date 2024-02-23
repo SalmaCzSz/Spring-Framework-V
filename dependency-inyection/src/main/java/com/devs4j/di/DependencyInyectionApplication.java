@@ -29,7 +29,7 @@ public class DependencyInyectionApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(DependencyInyectionApplication.class);
 	
-	@Bean
+	/*@Bean
 	public String getApplicationName() {
 		return "¡Devs4j rules!";
 	}
@@ -38,7 +38,7 @@ public class DependencyInyectionApplication {
 	public ExplicitBean getBean() {
 		return new ExplicitBean();
 	}
-	
+	*/
 	public static void main(String[] args) {
 		// crear "Coche" con Dependency Inyection
 		/*ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
@@ -106,7 +106,11 @@ public class DependencyInyectionApplication {
 		
 		
 		
+		/*ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+		LifeCycleBean bean = context.getBean(LifeCycleBean.class);*/
+		
+		
+		
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
-		LifeCycleBean bean = context.getBean(LifeCycleBean.class);
 	}
 }
