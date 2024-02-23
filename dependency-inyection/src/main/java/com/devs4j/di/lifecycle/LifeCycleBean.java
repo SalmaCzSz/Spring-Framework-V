@@ -14,7 +14,7 @@ import jakarta.annotation.PreDestroy;
 
 @Component
 //@Scope("prototype")
-@Lazy // si el bean es Lazy no se inicializa a menos que sea inyectado
+@Lazy(false) // si el bean es Lazy no se inicializa a menos que sea inyectado
 public class LifeCycleBean implements BeanNameAware, InitializingBean, DisposableBean{
 	private static final Logger log = LoggerFactory.getLogger(LifeCycleBean.class);
 
