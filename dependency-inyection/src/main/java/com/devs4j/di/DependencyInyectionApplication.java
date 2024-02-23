@@ -15,6 +15,7 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 import com.devs4j.di.atributo.*;
 import com.devs4j.di.autowire.AreaCalculatorService;
+import com.devs4j.di.lifecycle.ExplicitBean;
 import com.devs4j.di.lifecycle.LifeCycleBean;
 import com.devs4j.di.profiles.*;
 import com.devs4j.di.qualifiers.*;
@@ -31,6 +32,11 @@ public class DependencyInyectionApplication {
 	@Bean
 	public String getApplicationName() {
 		return "¡Devs4j rules!";
+	}
+	
+	@Bean(initMethod = "init", destroyMethod = "destroy")
+	public ExplicitBean getBean() {
+		return new ExplicitBean();
 	}
 	
 	public static void main(String[] args) {
