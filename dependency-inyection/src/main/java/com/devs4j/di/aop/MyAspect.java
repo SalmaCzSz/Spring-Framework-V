@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class MyAspect {
 	private static final Logger log = LoggerFactory.getLogger(MyAspect.class);
 	
-	@Before("execution (* com.devs4j.di.aop.TargetObject.*(..))")
+	@Before("PointcutExample.targetObjectMethods()")
 	public void before(JoinPoint joinPoint) {
 		log.info("1 Method name {}", joinPoint.getSignature().getName());
 		log.info("Object type {}", joinPoint.getSignature().getDeclaringTypeName());
