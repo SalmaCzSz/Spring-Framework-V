@@ -115,5 +115,6 @@ public class DependencyInyectionApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
 		TargetObject targetObject = context.getBean(TargetObject.class);
 		targetObject.hello("Hola");
+		targetObject.foo();
 	}
 }
