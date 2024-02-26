@@ -20,6 +20,7 @@ import com.devs4j.di.lifecycle.LifeCycleBean;
 import com.devs4j.di.profiles.*;
 import com.devs4j.di.qualifiers.*;
 import com.devs4j.di.scopes.EjemploScope;
+import com.devs4j.di.aop.*;
 
 @SpringBootApplication
 /*@Configuration
@@ -112,5 +113,7 @@ public class DependencyInyectionApplication {
 		
 		
 		ConfigurableApplicationContext context = SpringApplication.run(DependencyInyectionApplication.class, args);
+		TargetObject targetObject = context.getBean(TargetObject.class);
+		targetObject.hello("Hola");
 	}
 }
