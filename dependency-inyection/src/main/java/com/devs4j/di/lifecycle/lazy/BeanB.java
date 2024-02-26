@@ -12,7 +12,7 @@ import jakarta.annotation.PostConstruct;
 @Component
 @Lazy(false)
 public class BeanB {
-	private static final Logger log = LoggerFactory.getLogger(LifeCycleBean.class);
+	private static final Logger log = LoggerFactory.getLogger(BeanB.class);
 	
 	@Autowired
 	private BeanA bean;

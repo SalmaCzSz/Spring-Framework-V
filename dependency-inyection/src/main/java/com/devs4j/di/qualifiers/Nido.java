@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Nido {
-	private static final Logger log = LoggerFactory.getLogger(Pajaro.class);
+	private static final Logger log = LoggerFactory.getLogger(Nido.class);
 	
 	@Autowired
 	private Animal pajaro;

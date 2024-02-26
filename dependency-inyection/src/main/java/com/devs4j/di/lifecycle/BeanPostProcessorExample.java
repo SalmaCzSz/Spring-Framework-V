@@ -8,12 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanPostProcessorExample implements BeanPostProcessor{
-	private static final Logger log = LoggerFactory.getLogger(LifeCycleBean.class);
+	private static final Logger log = LoggerFactory.getLogger(BeanPostProcessorExample.class);
 	
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 		if(bean instanceof LifeCycleBean) {
-			//log.info("beforeInitialization {}", beanName);
+			log.info("beforeInitialization {}", beanName);
 		}
 		
 		return bean;
@@ -21,7 +21,7 @@ public class BeanPostProcessorExample implements BeanPostProcessor{
 
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		//log.info("afterInitialization {}", beanName);
+		log.info("afterInitialization {}", beanName);
 		return bean;
 	}
 

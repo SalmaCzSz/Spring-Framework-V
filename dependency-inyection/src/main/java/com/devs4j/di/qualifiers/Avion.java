@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Avion implements Volador {
-	private static final Logger log = LoggerFactory.getLogger(Pajaro.class);
+	private static final Logger log = LoggerFactory.getLogger(Avion.class);
 
 	@Override
 	public void volar() {

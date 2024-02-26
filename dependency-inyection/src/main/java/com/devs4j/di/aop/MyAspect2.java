@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-@Order(1)
-public class MyAspect {
-	private static final Logger log = LoggerFactory.getLogger(MyAspect.class);
+@Order(0)
+public class MyAspect2 {
+	private static final Logger log = LoggerFactory.getLogger(MyAspect2.class);
 	
 	@Before("execution (* com.devs4j.di.aop.TargetObject.*(..))")
 	public void before(JoinPoint joinPoint) {
-		log.info("1 Method name {}", joinPoint.getSignature().getName());
+		log.info("2 Method name {}", joinPoint.getSignature().getName());
 		log.info("Object type {}", joinPoint.getSignature().getDeclaringTypeName());
 		log.info("Is public {}", Modifier.isPublic(joinPoint.getSignature().getModifiers()));
 		log.info("Modifiers {}", joinPoint.getSignature().getModifiers());

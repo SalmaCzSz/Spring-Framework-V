@@ -11,7 +11,7 @@ import jakarta.annotation.PostConstruct;
 @Component
 @Lazy
 public class BeanA {
-	private static final Logger log = LoggerFactory.getLogger(LifeCycleBean.class);
+	private static final Logger log = LoggerFactory.getLogger(BeanA.class);
 	
 	@PostConstruct
 	public void init() {
