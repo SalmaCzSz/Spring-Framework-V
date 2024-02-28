@@ -47,4 +47,12 @@ public class UserServices {
 		users.add(user);
 		return user;
 	}
+	
+	public User updateUser(User user, String username) {
+		User userToBeUpdated = getUserByUsername(username);
+		userToBeUpdated.setNickName(user.getNickName());
+		userToBeUpdated.setPassword(user.getPassword());
+		
+		return userToBeUpdated;
+	}
 }
