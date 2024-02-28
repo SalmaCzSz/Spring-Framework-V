@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.devs4j.users.models.*;
 import com.devs4j.users.services.*;
@@ -23,8 +24,8 @@ public class UserController {
 	private UserServices userService;
 	
 	@GetMapping // handler methods, se ejecutan a traves de un método HTTP y un recurso
-	public ResponseEntity<List<User>> get(){
-		return new ResponseEntity<List<User>>(userService.getUsers(), HttpStatus.OK);
+	public ResponseEntity<List<User>> get(@RequestParam(value = "startWith", required = false) String startWith){
+		return new ResponseEntity<List<User>>(userService.getUsers(startWith), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/{username}")
