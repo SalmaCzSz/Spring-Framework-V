@@ -1,6 +1,5 @@
 package com.devs4j.users.entities;
 
-
 import java.util.Objects;
 
 import jakarta.persistence.*;
