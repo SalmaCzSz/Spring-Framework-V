@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user_in_role")
-public class UserInRow {
+public class UserInRole {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -16,6 +16,7 @@ public class UserInRow {
 	@JoinColumn(name = "user_id")
 	private User user;
 	
+	@ManyToOne
 	@JoinColumn(name = "role_id")
 	private Role role;
 
@@ -56,7 +57,7 @@ public class UserInRow {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UserInRow other = (UserInRow) obj;
+		UserInRole other = (UserInRole) obj;
 		return Objects.equals(id, other.id);
 	}	
 }
