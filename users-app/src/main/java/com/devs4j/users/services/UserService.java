@@ -1,9 +1,12 @@
 package com.devs4j.users.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.devs4j.users.entities.User;
 import com.devs4j.users.repositories.UserRepository;
@@ -15,5 +18,10 @@ public class UserService {
 	
 	public List<User> getUsers(){
 		return userRepository.findAll();
+	}
+	
+	public User getUserById(Integer userId) {
+		return userRepository.findById(userId)
+							 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("User %d not found", userId)));
 	}
 }
