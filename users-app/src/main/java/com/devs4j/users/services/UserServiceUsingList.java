@@ -14,7 +14,7 @@ import com.github.javafaker.Faker;
 import jakarta.annotation.PostConstruct;
 
 @Service
-public class UserServices {
+public class UserServiceUsingList {
 	@Autowired
 	private Faker faker;
 	
