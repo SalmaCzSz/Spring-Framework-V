@@ -18,11 +18,15 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
+	public Page<String> getUsernames(int page, int size){
+		return userRepository.findUsernames(PageRequest.of(page, size));
+	}
+	
 	public Page<User> getUsers(int page, int size){
 		return userRepository.findAll(PageRequest.of(page, size));
 	}
 	
-	public User getUserById(Integer userId) {
+	public User getUserById(Long userId) {
 		return userRepository.findById(userId)
 							 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, String.format("User %d not found", userId)));
 	}

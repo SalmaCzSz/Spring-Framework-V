@@ -26,8 +26,13 @@ public class UserController {
 		return new ResponseEntity<>(service.getUsers(page, size), HttpStatus.OK);
 	}
 	
+	@GetMapping("/usernames")
+	public ResponseEntity<Page<String>> getUsernames(@RequestParam(required = false, value = "page") int page, @RequestParam(required = false, value = "size") int size){
+		return new ResponseEntity<>(service.getUsernames(page, size), HttpStatus.OK);
+	}
+	
 	@GetMapping("/{userId}")
-	public ResponseEntity<User> getUserById(@PathVariable("userId") Integer userId){
+	public ResponseEntity<User> getUserById(@PathVariable("userId") Long userId){
 		return new ResponseEntity<>(service.getUserById(userId), HttpStatus.OK);
 	}
 }
